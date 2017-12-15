@@ -1,0 +1,66 @@
+module.exports = [
+{
+	"name":"Shawn",
+  	"photo":"http://images.fanpop.com/images/image_uploads/Shawn-Spencer-tv-links-325898_300_440.jpg",
+  	"scores":[
+      	5,
+      	1,
+      	4,
+      	4,
+      	5,
+      	1,
+      	2,
+      	5,
+      	4,
+      	1
+    ]
+},
+{
+	"name":"Gus",
+	"photo":"https://upload.wikimedia.org/wikipedia/en/thumb/7/70/Burton_Guster.jpg/200px-Burton_Guster.jpg",
+	"scores":[
+		3,	
+		4,
+		2,
+		1,
+		5,
+		2,
+		4,
+		3,
+		4,
+		5
+	]
+},
+{
+	"name":"Juliet",
+	"photo":"https://vignette.wikia.nocookie.net/p__/images/b/b6/Jules.jpg/revision/latest?cb=20121230224400&path-prefix=psychusa",
+	"scores":[
+		5,
+		1,
+		3,
+		2,
+		5,
+		3,
+		4,
+		2,
+		1,
+		5
+	]
+},
+{
+	"name":"Carlton",
+	"photo":"https://upload.wikimedia.org/wikipedia/en/thumb/2/27/Carlton_Lassiter.jpg/200px-Carlton_Lassiter.jpg",
+	"scores":[
+		3,
+		3,
+		3,
+		3,
+		3,
+		3,
+		3,
+		3,
+		3,
+		3
+	]
+}
+];
