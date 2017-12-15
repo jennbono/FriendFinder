@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>FriendFinder</title>
+  <title>Friend Finder | Survey</title>
 
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
@@ -13,9 +13,15 @@
   <!-- Font Awesome Glyphicons -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
 
+ <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Handlee|Roboto+Condensed" rel="stylesheet">
+
   <!-- Chosen -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="./style.css">
+
 
 </head>
 
@@ -191,3 +197,36 @@
 </body>
 
 </html>
+
+<script type="text/javascript">
+    $("#submit").click(function() {
+        var newFriend = {
+            "name": $("#name").val().trim(),
+            "photo": $("#photo").val().trim(),
+            "scores":[
+                parseInt($("#q1").val()),
+                parseInt($("#q2").val()),
+                parseInt($("#q3").val()),
+                parseInt($("#q4").val()),
+                parseInt($("#q5").val()),
+                parseInt($("#q6").val()),
+                parseInt($("#q7").val()),
+                parseInt($("#q8").val()),
+                parseInt($("#q9").val()),
+                parseInt($("#q10").val())
+            ]
+        };
+
+        $.ajax({
+            url: "/api/friends",
+            type: "POST",
+            contentType: "application/json", // send as JSON
+            data: newFriend
+        })
+            .done(function(data) {
+            console.log(data);
+            alert("Adding New Friend");
+      });
+    })
+
+</script>
