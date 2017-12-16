@@ -30,8 +30,8 @@ app.post("/api/friends", function(request, response) {
 	var closestFriendDifference = Math.min.apply(Math, closestFriendsDifference);
 	var closestFriendIndex = closestFriendsDifference.indexOf(closestFriendDifference);
 	var closestFriend = friends[closestFriendIndex];
-	response.json(closestFriend);
 	friends.push(request.body);
+	response.json(closestFriend);
 });
 
 // Starts the server to begin listening

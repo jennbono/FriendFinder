@@ -48,7 +48,7 @@
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
       <option value="3">3</option>
-      <option value="4">4</option>
+      <option value="4" selected>4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
 
@@ -59,7 +59,7 @@
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
       <option value="3">3</option>
-      <option value="4">4</option>
+      <option value="4" selected>4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
 
@@ -68,7 +68,7 @@
     <h4>I enjoy good food, even if it costs a little more.</h4>
     <select class="chosen-select" id="q3">
       <option value=""></option>
-      <option value="1">1 (Strongly Disagree)</option>
+      <option value="1" selected>1 (Strongly Disagree)</option>
       <option value="2">2</option>
       <option value="3">3</option>
       <option value="4">4</option>
@@ -81,7 +81,7 @@
     <select class="chosen-select" id="q4">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
+      <option value="2" selected>2</option>
       <option value="3">3</option>
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
@@ -93,7 +93,7 @@
     <select class="chosen-select" id="q5">
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
-      <option value="2">2</option>
+      <option value="2" selected>2</option>
       <option value="3">3</option>
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
@@ -106,7 +106,7 @@
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
-      <option value="3">3</option>
+      <option value="3" selected>3</option>
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
@@ -119,7 +119,7 @@
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
       <option value="3">3</option>
-      <option value="4">4</option>
+      <option value="4" selected>4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
 
@@ -129,7 +129,7 @@
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
-      <option value="3">3</option>
+      <option value="3" selected>3</option>
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
@@ -141,7 +141,7 @@
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
       <option value="3">3</option>
-      <option value="4">4</option>
+      <option value="4" selected>4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
 
@@ -151,7 +151,7 @@
       <option value=""></option>
       <option value="1">1 (Strongly Disagree)</option>
       <option value="2">2</option>
-      <option value="3">3</option>
+      <option value="3" selected>3</option>
       <option value="4">4</option>
       <option value="5">5 (Strongly Agree)</option>
     </select>
@@ -215,18 +215,20 @@
                 parseInt($("#q9").val()),
                 parseInt($("#q10").val())
             ]
-        };
 
+        }; // end of newFriend
+        console.log(newFriend);
+        console.log(JSON.stringify(newFriend));
         $.ajax({
             url: "/api/friends",
             type: "POST",
             contentType: "application/json", // send as JSON
-            data: newFriend
+            data: JSON.stringify(newFriend)
         })
-            .done(function(data) {
+        .done(function(data) {
             console.log(data);
             alert("Adding New Friend");
-      });
-    })
+        });
+    });
 
 </script>
