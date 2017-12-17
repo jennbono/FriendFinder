@@ -13,6 +13,10 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(express.static('public'));
 
+app.get("/", function(request, response){
+	response.redirect("/home.html");
+});
+
 app.get("/api/friends", function(request, response) {
   	response.json(friends);
 });
